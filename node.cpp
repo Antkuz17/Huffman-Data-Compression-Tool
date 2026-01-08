@@ -6,6 +6,8 @@
     {
         character = c;
         freq = f;
+        left = nullptr;
+        right = nullptr;
     }
 
 // Constructor for internal nodes

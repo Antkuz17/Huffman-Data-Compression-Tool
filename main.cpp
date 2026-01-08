@@ -19,8 +19,12 @@ int main () {
     // Hashmaps are iterable in c++ so this is already fire
     std::unordered_map<char, int> counter;
 
+    // Total number of characters
+    int numChars{0};
+
     // We assume that we will have only generic charaters so no crazy odd characters
     for (char x : word) {
+        numChars++;
         counter[x]++;
     }
 
@@ -72,13 +76,37 @@ int main () {
             nodes.erase(nodes.begin() + lowestIndex);
             nodes.erase(nodes.begin() + secondLowestIndex);
         }
+
+        
+
+
+        // Now the tree is built we can move to traversing it to generate codes
+        // The way im doing is im gonna store every code in a hashmap with char as key and array as value
+
     
     }
+    std::cout << "Nodes remaining: " << nodes.size() << std::endl;
+
+    preOrder(nodes[0], "");
 
     //g++ main.cpp node.cpp -o test.exe ; .\test.exe
     
 
 
     return 0;
+}
+
+void preOrder(node* root, std::string codeCurrent){
+    if(root == nullptr){
+        return;
+    }
+
+    if(root->getLeft() == nullptr && root->getRight() == nullptr){
+        root->setCode(codeCurrent);
+        std::cout << root->getChar() << ": " << root->getCode() << std::endl;
+    }
+
+    preOrder(root->getLeft(), codeCurrent + "0");
+    preOrder(root->getRight(), codeCurrent + "1");
 }
 
