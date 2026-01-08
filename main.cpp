@@ -22,6 +22,8 @@ int main () {
     std::cout << pair.first << " " << pair.second << std::endl;
     }
 
+    // Now we have all the frequency data in a hashmap
+
 
     //g++ main.cpp -o test.exe ; .\test.exe
     
