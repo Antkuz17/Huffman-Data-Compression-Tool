@@ -41,6 +41,8 @@ int main () {
     int lowestIndex = -1;
     int secondLowestIndex = -1;
 
+    std::vector<node*> leafNodes = nodes;
+
     // This is where we build the tree
     // We keep going till there is only one node left since that is the root
     while(nodes.size() > 1){
@@ -88,6 +90,23 @@ int main () {
     std::cout << "Nodes remaining: " << nodes.size() << std::endl;
 
     preOrder(nodes[0], "");
+
+    // At this point all the codes should be generated and stored in the nodes
+    // Now we must just provide the conversion from original to encoded
+    // I will also show the memory savings here
+    std::string encodedString{""};
+    for(char x: word){
+        // Find its code
+        for(node* n: leafNodes){
+            if(n->getChar() == x){
+                encodedString += n->getCode();
+                break;
+            }
+        }
+    }
+    std::cout << "Encoded string: " << encodedString << std::endl;
+    std::cout << "Original size (in bits): " << word.length() * 8 << std::endl;
+    std::cout << "Encoded size (in bits): " << encodedString.length() << std::endl;
 
     //g++ main.cpp node.cpp -o test.exe ; .\test.exe
     
