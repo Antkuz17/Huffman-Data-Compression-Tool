@@ -13,7 +13,7 @@ int main () {
     // String holding our word
     std::string word;
 
-    std::cin >> word;
+    std::getline(std::cin, word);
 
     // Hashmap for counting the frequency of letters
     // Hashmaps are iterable in c++ so this is already fire
@@ -110,8 +110,6 @@ int main () {
 
     //g++ main.cpp node.cpp -o test.exe ; .\test.exe
     
-
-
     return 0;
 }
 
