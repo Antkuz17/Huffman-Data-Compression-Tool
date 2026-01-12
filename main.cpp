@@ -12,13 +12,16 @@ int main () {
     std::vector<node*> nodes;
 
     // Opening the txt file
-    std::ifstream inputfile("INPUT TEXT HERE\\text.txt");
+    std::ifstream inputfile("Input text\\text.txt");
 
     // String holding our word
     std::string word;
 
     // Temporary line holder
     std::string line;
+
+    // File we will write to 
+    std::ofstream outfile("Output text\\data.bin", std::ios::out | std::ios::binary);
 
     // Hashmap for counting the frequency of letters
     // Hashmaps are iterable in c++ so this is already fire
@@ -30,7 +33,11 @@ int main () {
     // We assume that we will have only generic charaters so no crazy odd characters
     if (inputfile.is_open()) {
     while (std::getline(inputfile, line)) {
-        std::cout << line << std::endl;
+        word += line; // Append line to word
+        for (char x : line) {
+            numChars++;
+            counter[x]++;
+        }
     }
         inputfile.close();
     } else {
@@ -108,13 +115,14 @@ int main () {
         // Find its code
         for(node* n: leafNodes){
             if(n->getChar() == x){
+                outfile.write(n->getCode().c_str(), n->getCode().size());
                 encodedString += n->getCode();
                 break;
             }
         }
     }
     std::cout << "Encoded string: " << encodedString << std::endl;
-    std::cout << "Original size (in bits): " << word.length() * 8 << std::endl;
+    std::cout << "Original size (in bits): " << numChars * 8 << std::endl;
     std::cout << "Encoded size (in bits): " << encodedString.length() << std::endl;
 
     //g++ main.cpp node.cpp -o test.exe ; .\test.exe
