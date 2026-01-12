@@ -3,6 +3,7 @@
 #include <unordered_map>
 #include <vector>
 #include "header.hpp"
+#include <fstream>
 
 int main () {
     std::cout << "Enter a sentence" << std::endl;
@@ -10,10 +11,14 @@ int main () {
     // This stores all our nodes
     std::vector<node*> nodes;
 
+    // Opening the txt file
+    std::ifstream inputfile("INPUT TEXT HERE\\text.txt");
+
     // String holding our word
     std::string word;
 
-    std::getline(std::cin, word);
+    // Temporary line holder
+    std::string line;
 
     // Hashmap for counting the frequency of letters
     // Hashmaps are iterable in c++ so this is already fire
@@ -23,9 +28,13 @@ int main () {
     int numChars{0};
 
     // We assume that we will have only generic charaters so no crazy odd characters
-    for (char x : word) {
-        numChars++;
-        counter[x]++;
+    if (inputfile.is_open()) {
+    while (std::getline(inputfile, line)) {
+        std::cout << line << std::endl;
+    }
+        inputfile.close();
+    } else {
+        std::cerr << "Unable to open file" << std::endl;
     }
 
     // Debugging print function

@@ -1,4 +1,6 @@
 #include <string>
+#include <fstream>
+
 
 class node{
     
