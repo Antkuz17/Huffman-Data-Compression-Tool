@@ -23,4 +23,5 @@ class node{
 };
 
 void preOrder(node* root, std::string codeCurrent);
+void writeJSON(node* root, std::ofstream& outfile, int indent = 0);
 

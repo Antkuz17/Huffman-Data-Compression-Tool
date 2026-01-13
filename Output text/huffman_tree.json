@@ -1,0 +1,520 @@
+{
+  "huffman_tree": {
+    "char": null,
+    "freq": 3214,
+    "left": {
+      "char": null,
+      "freq": 1354,
+      "left": {
+        "char": null,
+        "freq": 640,
+        "left": {
+          "char": null,
+          "freq": 305,
+          "left": {
+            "char": "s",
+            "freq": 148,
+            "code": "0000"
+          },
+          "right": {
+            "char": null,
+            "freq": 157,
+            "left": {
+              "char": "u",
+              "freq": 75,
+              "code": "00010"
+            },
+            "right": {
+              "char": "l",
+              "freq": 82,
+              "code": "00011"
+            }
+          }
+        },
+        "right": {
+          "char": null,
+          "freq": 335,
+          "left": {
+            "char": "i",
+            "freq": 164,
+            "code": "0010"
+          },
+          "right": {
+            "char": "n",
+            "freq": 171,
+            "code": "0011"
+          }
+        }
+      },
+      "right": {
+        "char": null,
+        "freq": 714,
+        "left": {
+          "char": null,
+          "freq": 354,
+          "left": {
+            "char": "o",
+            "freq": 177,
+            "code": "0100"
+          },
+          "right": {
+            "char": "a",
+            "freq": 177,
+            "code": "0101"
+          }
+        },
+        "right": {
+          "char": null,
+          "freq": 360,
+          "left": {
+            "char": "r",
+            "freq": 179,
+            "code": "0110"
+          },
+          "right": {
+            "char": null,
+            "freq": 181,
+            "left": {
+              "char": "d",
+              "freq": 90,
+              "code": "01110"
+            },
+            "right": {
+              "char": null,
+              "freq": 91,
+              "left": {
+                "char": ".",
+                "freq": 42,
+                "code": "011110"
+              },
+              "right": {
+                "char": "w",
+                "freq": 49,
+                "code": "011111"
+              }
+            }
+          }
+        }
+      }
+    },
+    "right": {
+      "char": null,
+      "freq": 1860,
+      "left": {
+        "char": null,
+        "freq": 809,
+        "left": {
+          "char": "e",
+          "freq": 370,
+          "code": "100"
+        },
+        "right": {
+          "char": null,
+          "freq": 439,
+          "left": {
+            "char": null,
+            "freq": 205,
+            "left": {
+              "char": null,
+              "freq": 102,
+              "left": {
+                "char": "p",
+                "freq": 51,
+                "code": "101000"
+              },
+              "right": {
+                "char": null,
+                "freq": 51,
+                "left": {
+                  "char": null,
+                  "freq": 23,
+                  "left": {
+                    "char": null,
+                    "freq": 11,
+                    "left": {
+                      "char": "A",
+                      "freq": 5,
+                      "code": "101001000"
+                    },
+                    "right": {
+                      "char": null,
+                      "freq": 6,
+                      "left": {
+                        "char": "?",
+                        "freq": 3,
+                        "code": "1010010010"
+                      },
+                      "right": {
+                        "char": "H",
+                        "freq": 3,
+                        "code": "1010010011"
+                      }
+                    }
+                  },
+                  "right": {
+                    "char": "v",
+                    "freq": 12,
+                    "code": "10100101"
+                  }
+                },
+                "right": {
+                  "char": "T",
+                  "freq": 28,
+                  "code": "1010011"
+                }
+              }
+            },
+            "right": {
+              "char": "c",
+              "freq": 103,
+              "code": "10101"
+            }
+          },
+          "right": {
+            "char": null,
+            "freq": 234,
+            "left": {
+              "char": null,
+              "freq": 114,
+              "left": {
+                "char": "f",
+                "freq": 57,
+                "code": "101100"
+              },
+              "right": {
+                "char": null,
+                "freq": 57,
+                "left": {
+                  "char": null,
+                  "freq": 28,
+                  "left": {
+                    "char": "k",
+                    "freq": 13,
+                    "code": "10110100"
+                  },
+                  "right": {
+                    "char": null,
+                    "freq": 15,
+                    "left": {
+                      "char": null,
+                      "freq": 7,
+                      "left": {
+                        "char": "2",
+                        "freq": 3,
+                        "code": "1011010100"
+                      },
+                      "right": {
+                        "char": "I",
+                        "freq": 4,
+                        "code": "1011010101"
+                      }
+                    },
+                    "right": {
+                      "char": ":",
+                      "freq": 8,
+                      "code": "101101011"
+                    }
+                  }
+                },
+                "right": {
+                  "char": "y",
+                  "freq": 29,
+                  "code": "1011011"
+                }
+              }
+            },
+            "right": {
+              "char": null,
+              "freq": 120,
+              "left": {
+                "char": "g",
+                "freq": 59,
+                "code": "101110"
+              },
+              "right": {
+                "char": "m",
+                "freq": 61,
+                "code": "101111"
+              }
+            }
+          }
+        }
+      },
+      "right": {
+        "char": null,
+        "freq": 1051,
+        "left": {
+          "char": " ",
+          "freq": 513,
+          "code": "110"
+        },
+        "right": {
+          "char": null,
+          "freq": 538,
+          "left": {
+            "char": "t",
+            "freq": 269,
+            "code": "1110"
+          },
+          "right": {
+            "char": null,
+            "freq": 269,
+            "left": {
+              "char": "h",
+              "freq": 134,
+              "code": "11110"
+            },
+            "right": {
+              "char": null,
+              "freq": 135,
+              "left": {
+                "char": null,
+                "freq": 63,
+                "left": {
+                  "char": "b",
+                  "freq": 31,
+                  "code": "1111100"
+                },
+                "right": {
+                  "char": null,
+                  "freq": 32,
+                  "left": {
+                    "char": null,
+                    "freq": 16,
+                    "left": {
+                      "char": null,
+                      "freq": 8,
+                      "left": {
+                        "char": "S",
+                        "freq": 4,
+                        "code": "1111101000"
+                      },
+                      "right": {
+                        "char": "z",
+                        "freq": 4,
+                        "code": "1111101001"
+                      }
+                    },
+                    "right": {
+                      "char": null,
+                      "freq": 8,
+                      "left": {
+                        "char": "N",
+                        "freq": 4,
+                        "code": "1111101010"
+                      },
+                      "right": {
+                        "char": null,
+                        "freq": 4,
+                        "left": {
+                          "char": "O",
+                          "freq": 2,
+                          "code": "11111010110"
+                        },
+                        "right": {
+                          "char": "J",
+                          "freq": 2,
+                          "code": "11111010111"
+                        }
+                      }
+                    }
+                  },
+                  "right": {
+                    "char": null,
+                    "freq": 16,
+                    "left": {
+                      "char": null,
+                      "freq": 8,
+                      "left": {
+                        "char": null,
+                        "freq": 4,
+                        "left": {
+                          "char": "6",
+                          "freq": 2,
+                          "code": "11111011000"
+                        },
+                        "right": {
+                          "char": "8",
+                          "freq": 2,
+                          "code": "11111011001"
+                        }
+                      },
+                      "right": {
+                        "char": null,
+                        "freq": 4,
+                        "left": {
+                          "char": "M",
+                          "freq": 2,
+                          "code": "11111011010"
+                        },
+                        "right": {
+                          "char": null,
+                          "freq": 2,
+                          "left": {
+                            "char": "F",
+                            "freq": 1,
+                            "code": "111110110110"
+                          },
+                          "right": {
+                            "char": "W",
+                            "freq": 1,
+                            "code": "111110110111"
+                          }
+                        }
+                      }
+                    },
+                    "right": {
+                      "char": null,
+                      "freq": 8,
+                      "left": {
+                        "char": null,
+                        "freq": 4,
+                        "left": {
+                          "char": null,
+                          "freq": 2,
+                          "left": {
+                            "char": "%",
+                            "freq": 1,
+                            "code": "111110111000"
+                          },
+                          "right": {
+                            "char": "R",
+                            "freq": 1,
+                            "code": "111110111001"
+                          }
+                        },
+                        "right": {
+                          "char": null,
+                          "freq": 2,
+                          "left": {
+                            "char": "j",
+                            "freq": 1,
+                            "code": "111110111010"
+                          },
+                          "right": {
+                            "char": "E",
+                            "freq": 1,
+                            "code": "111110111011"
+                          }
+                        }
+                      },
+                      "right": {
+                        "char": null,
+                        "freq": 4,
+                        "left": {
+                          "char": null,
+                          "freq": 2,
+                          "left": {
+                            "char": "L",
+                            "freq": 1,
+                            "code": "111110111100"
+                          },
+                          "right": {
+                            "char": "C",
+                            "freq": 1,
+                            "code": "111110111101"
+                          }
+                        },
+                        "right": {
+                          "char": null,
+                          "freq": 2,
+                          "left": {
+                            "char": "4",
+                            "freq": 1,
+                            "code": "111110111110"
+                          },
+                          "right": {
+                            "char": "9",
+                            "freq": 1,
+                            "code": "111110111111"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "right": {
+                "char": null,
+                "freq": 72,
+                "left": {
+                  "char": ",",
+                  "freq": 35,
+                  "code": "1111110"
+                },
+                "right": {
+                  "char": null,
+                  "freq": 37,
+                  "left": {
+                    "char": null,
+                    "freq": 18,
+                    "left": {
+                      "char": "x",
+                      "freq": 9,
+                      "code": "111111100"
+                    },
+                    "right": {
+                      "char": "'",
+                      "freq": 9,
+                      "code": "111111101"
+                    }
+                  },
+                  "right": {
+                    "char": null,
+                    "freq": 19,
+                    "left": {
+                      "char": null,
+                      "freq": 9,
+                      "left": {
+                        "char": null,
+                        "freq": 4,
+                        "left": {
+                          "char": null,
+                          "freq": 2,
+                          "left": {
+                            "char": "0",
+                            "freq": 1,
+                            "code": "111111110000"
+                          },
+                          "right": {
+                            "char": "7",
+                            "freq": 1,
+                            "code": "111111110001"
+                          }
+                        },
+                        "right": {
+                          "char": null,
+                          "freq": 2,
+                          "left": {
+                            "char": "3",
+                            "freq": 1,
+                            "code": "111111110010"
+                          },
+                          "right": {
+                            "char": "1",
+                            "freq": 1,
+                            "code": "111111110011"
+                          }
+                        }
+                      },
+                      "right": {
+                        "char": "B",
+                        "freq": 5,
+                        "code": "1111111101"
+                      }
+                    },
+                    "right": {
+                      "char": "q",
+                      "freq": 10,
+                      "code": "111111111"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

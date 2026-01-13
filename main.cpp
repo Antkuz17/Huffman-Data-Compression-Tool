@@ -6,10 +6,14 @@
 #include <fstream>
 
 int main () {
-    std::cout << "Enter a sentence" << std::endl;
-
     // This stores all our nodes
     std::vector<node*> nodes;
+
+    // Json file to write the tree structure
+    std::ofstream binTree("Output text\\huffman_tree.json");
+
+    // Write the opening brace for the JSON object
+    binTree << "{\n  \"huffman_tree\": ";
 
     // Opening the txt file
     std::ifstream inputfile("Input text\\text.txt");
@@ -21,7 +25,7 @@ int main () {
     std::string line;
 
     // File we will write to 
-    std::ofstream outfile("Output text\\data.bin", std::ios::out | std::ios::binary);
+    std::ofstream outfile("Output text\\data.bin", std::ios::binary);
 
     // Hashmap for counting the frequency of letters
     // Hashmaps are iterable in c++ so this is already fire
@@ -35,18 +39,18 @@ int main () {
     while (std::getline(inputfile, line)) {
         word += line; // Append line to word
         for (char x : line) {
-            numChars++;
-            counter[x]++;
+
+            // Only count standard ASCII characters
+            if (x >= 0 && x <= 127) {
+                word += x;
+                numChars++;
+                counter[x]++;
+            }
         }
     }
         inputfile.close();
     } else {
         std::cerr << "Unable to open file" << std::endl;
-    }
-
-    // Debugging print function
-    for (const auto& pair : counter) {
-    std::cout << pair.first << " " << pair.second << std::endl;
     }
 
     // Now we have all the frequency data in a hashmap
@@ -103,8 +107,6 @@ int main () {
 
     
     }
-    std::cout << "Nodes remaining: " << nodes.size() << std::endl;
-
     preOrder(nodes[0], "");
 
     // At this point all the codes should be generated and stored in the nodes
@@ -121,11 +123,14 @@ int main () {
             }
         }
     }
-    std::cout << "Encoded string: " << encodedString << std::endl;
-    std::cout << "Original size (in bits): " << numChars * 8 << std::endl;
-    std::cout << "Encoded size (in bits): " << encodedString.length() << std::endl;
 
     //g++ main.cpp node.cpp -o test.exe ; .\test.exe
+
+    writeJSON(nodes[0], binTree, 2);
+    binTree << "\n}";
+    binTree.close();
+
+    outfile.close();
     
     return 0;
 }
@@ -137,10 +142,49 @@ void preOrder(node* root, std::string codeCurrent){
 
     if(root->getLeft() == nullptr && root->getRight() == nullptr){
         root->setCode(codeCurrent);
-        std::cout << root->getChar() << ": " << root->getCode() << std::endl;
     }
 
     preOrder(root->getLeft(), codeCurrent + "0");
     preOrder(root->getRight(), codeCurrent + "1");
+}
+
+void writeJSON(node* root, std::ofstream& outfile, int indent) {
+    std::string indentation(indent, ' ');
+    
+    // Base case
+    if (root == nullptr) {
+        outfile << "null";
+        return;
+    }
+    
+    outfile << "{\n";
+    // Write character
+    if (root->getLeft() == nullptr && root->getRight() == nullptr) {
+        outfile << indentation << "  \"char\": \"" << root->getChar() << "\",\n";
+    } else {
+        outfile << indentation << "  \"char\": null,\n";
+    }
+    
+    // Write frequency
+    outfile << indentation << "  \"freq\": " << root->getFreq();
+    
+    // Write code if it's a leaf node
+    if (root->getLeft() == nullptr && root->getRight() == nullptr) {
+        outfile << ",\n" << indentation << "  \"code\": \"" << root->getCode() << "\"";
+    }
+    
+    // Write left child
+    if (root->getLeft() != nullptr) {
+        outfile << ",\n" << indentation << "  \"left\": ";
+        writeJSON(root->getLeft(), outfile, indent + 2);
+    }
+    
+    // Write right child
+    if (root->getRight() != nullptr) {
+        outfile << ",\n" << indentation << "  \"right\": ";
+        writeJSON(root->getRight(), outfile, indent + 2);
+    }
+    
+    outfile << "\n" << indentation << "}";
 }
 

@@ -1,2 +1,21 @@
-TTTTTTTTTTTtttttttTTTtehiinijenrjrbnie
-yyyyyyyyyyysbhjebvhjiebuiswnkowm testing
+The Night of the Compression Test
+The clock read 2 AM, but sleep was the furthest thing from mind. The Huffman tree generator had finally compiled without errors, and now came the real test: would it actually work?
+The first test was simple—a file containing nothing but the opening lines of a favorite book. Something with enough variety to build an interesting tree, but short enough to verify by hand if needed. The program hummed to life, reading the file character by character, counting frequencies with mechanical precision.
+Letters appeared on screen in a cascade: 'e' appeared fourteen times, 't' ten times, 'h' three times. The frequency table looked right. That was step one.
+Then came the tree construction. The algorithm was supposed to find the two lowest frequencies, combine them, and repeat until only one node remained. The screen flickered as it worked. Nodes remaining: 1 appeared at the bottom. Success—or at least, the tree had been built.
+But the real magic was in the codes. Each character should get a unique binary code, with more frequent characters getting shorter codes. That's the whole point of Huffman coding: efficiency through inequality.
+The codes printed out:
+
+The most common letter got just three bits
+Medium frequency letters got four or five bits
+Rare letters were stuck with six or seven bits
+
+It made sense. It looked right. But there was only one way to be sure.
+The original text was 78 characters. At 8 bits per character, that's 624 bits total. The encoded version? 293 bits. The compression worked—the file was less than half its original size.
+A grin spread across the tired face staring at the monitor. The math checked out. The tree was balanced. The algorithm had done exactly what it was supposed to do.
+But one test wasn't enough. Time for something more challenging: the entire text of a technical paper, thousands of words, complex punctuation, numbers, everything. The program ran again, this time taking a few seconds to process. The tree grew massive, dozens of unique characters, each finding its place in the binary hierarchy.
+The compression ratio was even better this time—nearly 60% reduction in size.
+Then came the JSON export test. Would the tree structure actually translate into readable format? The file was created, and opening it revealed a perfect nested structure: nodes with their frequencies, internal nodes pointing to children, leaf nodes holding their precious character data and binary codes.
+It was beautiful, in a strange computational way. A tree that existed only in memory, now frozen in JSON, a snapshot of optimal compression for one specific piece of text.
+The final test was the real challenge: compress something, then try to reverse it. If the tree structure was correct, the encoded string plus the tree should be enough to perfectly reconstruct the original. But that would require writing a decoder, and the sky was already beginning to lighten outside the window.
+For now, the tree stood complete, a monument to efficient data representation. Tomorrow would bring new challenges—memory leaks to fix, edge cases to handle, perhaps that decoder to write. But tonight, the Huffman tree generator lived, breathed, and compressed. And that was enough.
